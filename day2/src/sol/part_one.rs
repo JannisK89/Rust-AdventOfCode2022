@@ -1,3 +1,14 @@
+pub struct Matchup {
+    opponent: Hand,
+    you: Hand,
+}
+
+impl Matchup {
+    fn new(opponent: Hand, you: Hand) -> Matchup {
+        Matchup { opponent, you }
+    }
+}
+
 #[derive(PartialEq, Debug)]
 enum Hand {
     Rock,
@@ -10,17 +21,6 @@ enum MatchResult {
     Win,
     Tie,
     Loss,
-}
-
-pub struct Matchup {
-    opponent: Hand,
-    you: Hand,
-}
-
-impl Matchup {
-    fn new(opponent: Hand, you: Hand) -> Matchup {
-        Matchup { opponent, you }
-    }
 }
 
 pub fn parse_matchup(matchup: &str) -> Option<Matchup> {
